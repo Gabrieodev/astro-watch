@@ -37,7 +37,7 @@ def buscar_asteroides(data_inicio: str, data_fim: str) -> list[dict]:
                 "nome": neo["name"],
                 "data_aproximacao": aproximacao["close_approach_date"],
                 "diametro_min_km": float(neo["estimated_diameter"]["kilometers"]["estimated_diameter_min"]),
-                "diametro_max_km": float(neo["estimated_diameter"]["kilometers"]["estimated_diameter_max"]),
+                "diametro_max_km": float(neo["estimated_diame ter"]["kilometers"]["estimated_diameter_max"]),
                 "velocidade_kmh": float(aproximacao["relative_velocity"]["kilometers_per_hour"]),
                 "distancia_km": float(aproximacao["miss_distance"]["kilometers"]),
                 "distancia_lunar": float(aproximacao["miss_distance"]["lunar"]),
