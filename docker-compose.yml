@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  astrowatch:
+  build:
+  volumes:
+    - ./data:/app/data      # persiste o banco mesmo reiniciando o container
+    - ./.env:/app/.env      # injeta as variáveis de ambiente
+  environment:
+    - PYTHONUNBUFFERED=1

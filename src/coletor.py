@@ -48,7 +48,6 @@ def buscar_asteroides(data_inicio: str, data_fim: str) -> list[dict]:
 
     return asteroides
 
-
 if __name__ == "__main__":
     hoje = datetime.now().strftime("%Y-%m-%d")
     semana_passada = (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")
