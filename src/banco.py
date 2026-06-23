@@ -7,7 +7,7 @@ def conectar():
     """Retorna uma conexão com o banco, criando-o se não existir."""
     DB_PATH.parent.mkdir(exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row # permite acessar colunas por nome
+    conn.row_factory = sqlite3.Row  # permite acessar colunas por nome
     return conn
 
 def criar_schema():

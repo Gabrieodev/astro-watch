@@ -8,7 +8,7 @@ import time
 def executar_pipeline():
     print(f"\n[{datetime.now()}] Iniciando pipeline...")
 
-     # Janela de 7 dias
+    # Janela de 7 dias
     hoje = datetime.now().strftime("%Y-%m-%d")
     inicio = (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")
 
@@ -32,25 +32,12 @@ def executar_pipeline():
 
 if __name__ == "__main__":
     criar_schema()
-    executar_pipeline()   # executa agora
+    executar_pipeline()  # executa agora
 
-     # Agenda para rodar toda semana às 08h de segunda-feira
+    # Agenda para rodar toda semana às 08h de segunda-feira
     schedule.every().monday.at("08:00").do(executar_pipeline)
 
     print("\nScheduler ativo. Próxima execução: segunda-feira às 08h.")
     while True:
         schedule.run_pending()
         time.sleep(60)
-
-# Exportação de dados para visualizações
-import pandas as pd
-from banco import buscar_todos
-
-def exportar_csv():
-    dados = buscar_todos()
-    df = pd.DataFrame(dados)
-    df.to_csv("data/asteroides_export.csv", index=False, encoding="utf-8")
-    print("CSV exportado para Power BI.")
-
-
-
