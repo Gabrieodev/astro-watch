@@ -1,2 +1,4 @@
 #API_Key
 .env
+#Data and cache
+src/__pycache__
