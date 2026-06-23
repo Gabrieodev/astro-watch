@@ -1,4 +1,10 @@
-#API_Key
+# API Key
 .env
-#Data and cache
-src/__pycache__
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data files
+data/
+*.db
